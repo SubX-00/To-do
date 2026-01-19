@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do Web</title>
+  <link rel="stylesheet" href="styl.css" />
+</head>
+
+<body>
+  <h1>To-Do</h1>
+
+  <div class="inputs">
+    <input type="text" id="todoInput" placeholder="Typing">
+    <button class="Add" onclick="addTodo()">Add</button>
+    <button id="Save" onclick="saveTodos()">Save Tasks</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody class="todobody">
+      <!-- JS inserts rows here -->
+    </tbody>
+  </table>
+
+  <script src="main.js"></script>
+</body>
+</html>

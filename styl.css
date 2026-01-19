@@ -1,0 +1,141 @@
+:root {
+  --bg: #282828;
+  --bg-soft: #32302f;
+  --fg: #ebdbb2;
+  --accent: #83a598;
+  --accent2: #fabd2f;
+  --muted: #928374;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  color: var(--fg);
+  line-height: 1.6;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* INPUTS AND BUTTONS */
+.inputs {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  border: 1px solid white;
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--muted);
+  background: var(--bg-soft);
+  color: var(--fg);
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.Add {
+  background-color: rgb(92, 92, 172);
+  color: white;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+}
+
+.finish {
+  background-color: green;
+  color: white;
+}
+
+#Save {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* TABLE STYLING */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* keeps columns same width */
+  background: var(--bg-soft);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: left;
+  overflow-wrap: break-word;
+  vertical-align: middle; /* center content vertically */
+}
+
+/* Fixed column widths */
+th:nth-child(1),
+td:nth-child(1) { width: 5%; text-align: center; }
+th:nth-child(2),
+td:nth-child(2) { width: 50%; }
+th:nth-child(3),
+td:nth-child(3) { width: 15%; text-align: center; }
+th:nth-child(4),
+td:nth-child(4) { width: 30%; text-align: center; }
+
+/* Stripe rows for readability */
+tbody tr:nth-child(even) {
+  background: #32302f;
+}
+tbody tr:nth-child(odd) {
+  background: #282828;
+}
+
+/* Buttons inside table */
+button.finish,
+button.delete {
+  padding: 4px 8px;
+  margin: 0 2px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Status coloring */
+td:nth-child(3) {
+  font-weight: bold;
+}
+
+td:nth-child(3):contains("Done") {
+  color: var(--accent2);
+}
+td:nth-child(3):contains("Pending") {
+  color: var(--muted);
+}
